@@ -2,84 +2,131 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/titulo2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2196F3"
-    android:backgroundTint="#673AB7"
+    android:backgroundTint="#222121"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/buttonPlay3"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="52dp"
-        android:backgroundTint="#9C27B0"
+        android:backgroundTint="#FFFFFF"
         android:foreground="@drawable/stop"
-        android:onClick="executarSom"
+        android:onClick="pararMusica"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="315dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonPlay4" />
 
     <Button
         android:id="@+id/buttonPlay4"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="52dp"
-        android:backgroundTint="#9C27B0"
+        android:backgroundTint="#FFFFFF"
         android:foreground="@drawable/next"
-        android:onClick="executarSom"
+        android:onClick="nextMusic"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="211dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlay3"
+        app:layout_constraintStart_toEndOf="@+id/buttonPlay2" />
 
     <Button
         android:id="@+id/buttonPlay"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="18dp"
         android:layout_marginBottom="52dp"
-        android:backgroundTint="#9C27B0"
+        android:backgroundTint="#FFFFFF"
         android:foreground="@drawable/play"
         android:onClick="executarSom"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlay2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonPlay2"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="17dp"
         android:layout_marginBottom="52dp"
-        android:backgroundTint="#9C27B0"
+        android:backgroundTint="#FFFFFF"
         android:foreground="@drawable/pause"
-        android:onClick="executarSom"
+        android:onClick="pausarMusica"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="114dp" />
+        app:layout_constraintEnd_toStartOf="@+id/buttonPlay4"
+        app:layout_constraintStart_toEndOf="@+id/buttonPlay" />
 
     <SeekBar
-        android:id="@+id/seekBar"
+        android:id="@+id/seekVolume"
         android:layout_width="275dp"
         android:layout_height="0dp"
         android:layout_marginBottom="152dp"
         android:background="#00BCD4"
-        android:backgroundTint="#2196F3"
+        android:backgroundTint="#002196F3"
+        android:foregroundTint="#FFFFFF"
+        android:indeterminateTint="#FFFFFF"
         android:layoutDirection="locale"
+        android:progressBackgroundTint="#FFFFFF"
+        android:progressTint="#D8D8D8"
+        android:secondaryProgressTint="#000000"
+        android:tickMarkTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="vertical_only" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <TextView
+        android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/aonde"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="164dp" />
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="179dp"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="..." />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="423dp"
-        android:layout_height="75dp"
-        android:backgroundTint="#DA00FF"
-        android:textColorHighlight="#3F51B5"
-        tools:layout_editor_absoluteX="-6dp"
-        tools:layout_editor_absoluteY="-18dp" />
+    <ImageView
+        android:id="@+id/imageMusic"
+        android:layout_width="270dp"
+        android:layout_height="379dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginEnd="71dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38"
+        app:srcCompat="@drawable/aonde" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="412dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="4dp"
+        android:background="#00FFFFFF"
+        android:progressBackgroundTint="#FFFFFF"
+        android:progressTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
